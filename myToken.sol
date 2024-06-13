@@ -20,7 +20,7 @@ contract MyToken {
     // public variables here
     string public tokenName = "Fender";
     string public tokenAbbrv = "FNDR";
-    uint public totalSuppy = 0;
+    uint public totalSupply = 0;
 
     // mapping variable here
     mapping(address => uint) public balances;
@@ -28,14 +28,14 @@ contract MyToken {
 
     // mint function
     function mint (address _address, uint _value) public {
-      totalSuppy += _value;
+      totalSupply += _value;
       balances[_address] += _value;
     }
 
     // burn function
     function brun (address _address, uint _value) public {
       if (balances[_address] >= _value) {
-        totalSuppy -= _value;
+        totalSupply -= _value;
         balances[_address] -= _value;
       }
     }
